@@ -1,0 +1,55 @@
+This is a crib for the prject stages..
+
+1. Change the /properties localhost settings to your choise of settings. 
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
+
+2. API\appsettings.Development.json sets to:
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Information"
+    }
+  }
+}
+
+3. API\API.csproj sets to:
+<Nullable>disable</Nullable>
+
+4. Createing the product class and the properties in a Store folder
+(Think about what you are going to do with this Store, yes sell products.)
+
+5. Install Entity Framework features into the API.csproj file. > create the Data map with the StoreContext
+and implement the DbContext and constructor with the base options. > add the dbSets for the classes/Entities.
+add the dbContext implementation to the program.cs in services container 
+
+builder.Services.AddDbContext<StoreContext>(opt => {
+    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+Then you need to add the Connectionstrings values in the API\appsettings.Development.json
+ "ConnectionStrings": {
+    "DefaultConnection": "Data source=store.db"
+  }
+
+> Then install dotnet nuget tool whit correct version. 7.0.?
+dotnet tool install --global dotnet-ef --version 7.0.3
+
+> Open the terminal > Create a migration to the database. you need to be inside the API folder from the termial >
+> dotnet ef migrations add InitialCreate -o Data/Migrations > dotnet ef database update. > add SQLite viewer.          
+
+6. Seeding the database. Create a helper method to seed the db called DbInitializer but optianal name.
+then check if we allready have seeded if not do it. Create some new products to the db
