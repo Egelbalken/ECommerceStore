@@ -53,3 +53,9 @@ dotnet tool install --global dotnet-ef --version 7.0.3
 
 6. Seeding the database. Create a helper method to seed the db called DbInitializer but optianal name.
 then check if we allready have seeded if not do it. Create some new products to the db
+
+7. Create the ProductController. Give it atribute of an API/Controller > Then Add the db injection >
+then create two methods fot HTTPGET one for single and one for multiget use. Make the methods ascyn. 
+
+---------- Add Client React app ---------
+Create
