@@ -7,7 +7,9 @@ import {
 import { useState } from 'react';
 // This component will outlet the routes in routes.tsx
 import { Outlet } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Header from './Header';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,6 +29,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <ToastContainer position="bottom-right" theme="colored" hideProgressBar />
       <CssBaseline />
       <Header darkMode={darkMode} hanldeThemeChange={handleThemeChange} />
       <Container>
