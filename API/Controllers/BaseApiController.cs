@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers
 {
     /// <summary>
-    /// This is a way to nog to DRY
+    /// This is a way to nog go DRY
     /// </summary>
     [ApiController]
     [Route("api/[controller]")]

@@ -1,4 +1,3 @@
-import { loadavg } from 'os';
 import { useState, useEffect } from 'react';
 import agent from '../../app/api/agent';
 import LoadingComponent from '../../app/layout/LoadingComponent';

@@ -32,7 +32,7 @@ if (app.Environment.IsDevelopment())
 
 // Allowing the Cors of origin localhost:3000 as our frontend react api
 app.UseCors(opt => {
-    opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
+    opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://localhost:3000");
 });
 
 app.UseAuthorization();

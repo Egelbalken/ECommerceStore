@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    /// <summary>
+    /// Inherence the baseApi for to not go DRY
+    /// </summary>
     public class BuggyController : BaseApiController
     {
         [HttpGet("not-found")]

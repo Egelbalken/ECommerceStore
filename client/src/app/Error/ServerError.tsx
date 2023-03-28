@@ -1,6 +1,5 @@
 import { Divider, Paper, Typography } from '@mui/material';
 import { Container } from '@mui/system';
-import { stat } from 'fs';
 import { useLocation } from 'react-router-dom';
 
 export default function ServerError() {
